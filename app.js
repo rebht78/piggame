@@ -8,3 +8,17 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
+var activePlayer = 0;
+
+var btnRoll = document.querySelector('.btn-roll');
+ 
+btnRoll.addEventListener('click', (event) => {
+    // Generate random number from 1 to 6
+    let btnNumber = Math.floor(Math.random() * 6) + 1;
+    let currentScore = parseInt(document.querySelector('#score-'+activePlayer).textContent);
+    document.querySelector('#current-'+activePlayer).textContent = btnNumber;
+    currentScore += btnNumber;
+    document.querySelector('#score-'+activePlayer).textContent = currentScore;
+    activePlayer = (activePlayer == 0) ? 1 : 0;
+
+});
