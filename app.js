@@ -11,7 +11,7 @@ GAME RULES:
 var activePlayer = 0;
 
 var btnRoll = document.querySelector('.btn-roll');
- 
+var diceImage = document.querySelector('.dice');
 btnRoll.addEventListener('click', (event) => {
     // Generate random number from 1 to 6
     let btnNumber = Math.floor(Math.random() * 6) + 1;
@@ -21,4 +21,5 @@ btnRoll.addEventListener('click', (event) => {
     document.querySelector('#score-'+activePlayer).textContent = currentScore;
     activePlayer = (activePlayer == 0) ? 1 : 0;
 
+    diceImage.setAttribute('src','dice-'+btnNumber+'.png');
 });
