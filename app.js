@@ -22,4 +22,7 @@ btnRoll.addEventListener('click', (event) => {
     activePlayer = (activePlayer == 0) ? 1 : 0;
 
     diceImage.setAttribute('src','dice-'+btnNumber+'.png');
+
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
 });
